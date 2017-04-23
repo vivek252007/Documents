@@ -42,3 +42,13 @@ trace1 = Scatter(
 data = Data([trace0, trace1])
 
 py.plot(data, filename = 'basic-line')
+
+query = """SELECT t1.storyidentifier, t1.tickers, t1.storytime, t1.storyheadline t2.bodytext FROM t_bb_news_story_analytics_v2 t1 
+INNER JOIN t_bb_story_text_indexed t2 ON t2.storyidentifier = t1.storyidentifier limit 500"""
+
+df_raw_copper = psql.read_sql(query, conn)
+df_raw_copper.to_csv("database.csv", sep='|', encoding='utf-8')
+
+DatabaseError: Execution failed on sql 'SELECT t1.storyidentifier, t1.tickers, t1.storytime, t1.storyheadline t2.bodytext FROM t_bb_news_story_analytics_v2 t1 
+INNER JOIN t_bb_story_text_indexed t2 ON t2.storyidentifier = t1.storyidentifier limit 500': syntax error at or near "."
+LINE 1: ...ier, t1.tickers, t1.storytime, t1.storyheadline t2.bodytext ...
