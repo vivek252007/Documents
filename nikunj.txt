@@ -5,3 +5,20 @@ Table 2 -> t_bb_story_text_indexed and colums are "storyidentifier, bodytext"
 Now I want a table like this:
 
 Table -> dataset and colums should be "storyidentifier, storytime(sorted from old to new), tickers (variable, whichever i mention like, GOOG etc.), storyheadline,bodytext"
+
+
+select a.storyidentifier, a.storytime, a.tickers ,a.storyheadline  ,b.bodytext from t_bb_news_story_analytics_v2 as  a inner join t_bb_story_text_indexed as b on a.storyidentifier=b.storyidentifier
+where storyheadline <>'na';
+
+
+select a.storyidentifier, a.storytime, a.tickers ,a.storyheadline  ,b.bodytext from t_bb_news_story_analytics_v2 as  a inner join t_bb_story_text_indexed as b on a.storyidentifier=b.storyidentifier
+//where storyheadline <>'na' and bodytext <> 'na' ;
+
+select a.storyidentifier, a.storytime, a.tickers ,a.storyheadline  ,b.bodytext from t_bb_news_story_analytics_v2 as  a inner join t_bb_story_text_indexed as b on a.storyidentifier=b.storyidentifier
+where storyheadline <>'na' and bodytext <> 'na' ;
+
+select a.storyidentifier, a.storytime, a.tickers ,a.storyheadline 
+,b.bodytext from
+t_bb_news_story_analytics_v2 as  a inner join t_bb_story_text_indexed as b on
+a.storyidentifier=b.storyidentifier
+where storyheadline <> 'na' and bodytext <> 'na' order by storytime  asc;
