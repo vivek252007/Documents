@@ -1,0 +1,19 @@
+from joblib import Parallel, delayed
+import multiprocessing, time
+
+print ('vivek')
+embedding_dim = 300
+vec_filename = "data/glove.6B.300d.txt"
+# print (embedding_dim, vec_filename)
+
+def producer():
+    # print(__name__)
+    y = []
+    for i in range(10):
+        y.append(i)
+    return y
+
+if __name__ == '__main__':
+	num_cores = multiprocessing.cpu_count()
+	out = Parallel(n_jobs=num_cores)(delayed (producer)() for i in range(5)) 
+	print (out)
