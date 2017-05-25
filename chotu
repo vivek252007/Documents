@@ -2,8 +2,8 @@
 t_bb_news_story_analytics_v2 as a inner join t_bb_story_text_indexed as b on
 a.storyidentifier=b.storyidentifier where tickers = """+ticker+""" and storyheadline <> 'na' and bodytext <> 'na' order by storytime asc LIMIT 10000000"""
 
-table 1 : storyidentifier, storytime, tickers ,storyheadline
-table 2 : storyidentifier, bodytext
-table 3 : storyidentifier, EID
+t_bb_news_story_analytics : storyidentifier, storytime, tickers ,storyheadline
+t_bb_story_text_indexed : storyidentifier, bodytext
+t_bb_news_topic_meta : storyidentifier, EID
 
 get table 1, 2, 3 data on some specific EIDs
