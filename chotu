@@ -1,4 +1,7 @@
 """select a.storyidentifier, a.storytime, a.tickers ,a.storyheadline ,b.bodytext from
 t_bb_news_story_analytics_v2 as a inner join t_bb_story_text_indexed as b on
 a.storyidentifier=b.storyidentifier where tickers = """+ticker+""" and storyheadline <> 'na' and bodytext <> 'na' order by storytime asc LIMIT 10000000"""
-d
+
+table 1 : storyidentifier, storytime, tickers ,storyheadline
+table 2 : storyidentifier, bodytext
+table 3 : storyidentifier, EID
