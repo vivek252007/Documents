@@ -5,3 +5,5 @@ a.storyidentifier=b.storyidentifier where tickers = """+ticker+""" and storyhead
 table 1 : storyidentifier, storytime, tickers ,storyheadline
 table 2 : storyidentifier, bodytext
 table 3 : storyidentifier, EID
+
+get table 1, 2, 3 data on some specific EIDs
