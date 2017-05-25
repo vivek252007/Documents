@@ -4,6 +4,6 @@ a.storyidentifier=b.storyidentifier where tickers = """+ticker+""" and storyhead
 
 t_bb_news_story_analytics : storyidentifier, storytime, tickers ,storyheadline
 t_bb_story_text_indexed : storyidentifier, bodytext
-t_bb_news_topic_meta : storyidentifier, EID
+t_bb_news_topic_meta : storyidentifier, eid
 
-get table 1, 2, 3 data on some specific EIDs
+get table 1, 2, 3 data on some specific eid
